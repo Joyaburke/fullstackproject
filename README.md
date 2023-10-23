@@ -2,7 +2,7 @@
 First fullstack project: Widgets
 
 Three branches exisit on this project. <br>
-<strong>Main:</strong> contains the read me file explaining the GitHub repository. <br>
+Main: contains the read me file explaining the GitHub repository. <br>
 Server: contains the server end of the repo and all subsequent files. <br>
 Client: contains the client end of the repo and all subsequent files. <br>
 
