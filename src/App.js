@@ -1,4 +1,3 @@
-
 import './App.css';
 import {useEffect} from 'react';
 import CreateWidget from './Components/CreateWidget/CreateWidget';
@@ -21,8 +20,9 @@ const [selectedWidget, setSelectedWidget] = useState(null);
   
 const getWidgets = async () => {
   const result = await fetch("http://localhost:4000/widgets", {
-    method: "GET"  //this is the client asking the server for something.
+    method: "GET" 
   });
+ //this is the client asking the server for something.
 
   const widgetsResult = await result.json() //this creates an object out of the result of widgets (?)
   console.log('button', widgetsResult); //prints results
@@ -56,10 +56,13 @@ getWidgets();
 };
  
 
+  //this (getWidget()) is fire and forget and is fired on mount. It will only change if something is added or changed to the function, or if the  variables change in the array. If the empty array is in there it will run every single time it rerenders, making the useEffect worthless. 
 
 useEffect(() => {
-  getWidgets();       //this is fire and forget and is fired on mount. It will only change if something is added or changed to the function, or if the    variables change in the array. If the empty array is in there it will run every single time it rerenders, making the useEffect worthless. 
+  getWidgets();      
 }, [])
+
+//components rerender when state or props change
 
   return (
     <div>
